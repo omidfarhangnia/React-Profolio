@@ -2,20 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 /* default font names === 'Courier New', Courier, monospace; */
 
 @layer components {
-    .font-pacifico {
-        font-family: "Pacifico", 'Courier New', Courier, monospace;
+    .font-DancingScript {
+        font-family: 'Dancing Script', cursive;
     }
-    .font-teko {
-        font-family: "Teko", 'Courier New', Courier, monospace;
-    }
-    .font-openSans {
-        font-family: "Open Sans", 'Courier New', Courier, monospace;
+    .font-NotoSansJapanses{
+        font-family: 'Noto Sans JP', sans-serif;
     }
     .transition-75 {
         transition: all .75s;
