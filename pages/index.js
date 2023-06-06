@@ -1,5 +1,9 @@
+import AboutSection from "@/Components/AboutSection";
 import HomeSection from "@/Components/HomeSection";
 import Navbar from "@/Components/Navbar";
+import ProjectSection from "@/Components/ProjectSection";
+import SayHelloSection from "@/Components/SayHelloSection";
+import SkillsSection from "@/Components/SkillsSection";
 import React from "react";
 
 export default function Home() {
@@ -7,7 +11,13 @@ export default function Home() {
     <>
       <div className="relative">
         <Navbar />
-        <HomeSection />
+        <main>
+          <HomeSection />
+          <AboutSection />
+          <SkillsSection />
+          <ProjectSection />
+          <SayHelloSection />
+        </main>
       </div>
     </>
   );
