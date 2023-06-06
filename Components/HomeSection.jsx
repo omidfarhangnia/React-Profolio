@@ -5,42 +5,51 @@ import { BsLinkedin, BsMeta } from "react-icons/bs";
 import { gsap } from "gsap";
 
 const HomeSection = () => {
-  // useLayoutEffect(() => {
-  //   let jobTitleTl = gsap.timeline();
-  //   jobTitleTl
-  //     .to(".pageName", {
-  //       opacity: 1,
-  //       y: 0,
-  //       duration: 1,
-  //       ease: "power3.out",
-  //     })
-  //     .to(".jobTitle", {
-  //       width: "auto",
-  //       duration: 1,
-  //     })
-  //     .to(".jobTitle", {
-  //       opacity: 1,
-  //       delay: 0.3,
-  //       ease: "linear",
-  //       duration: 0.5,
-  //     })
-  //     .to(".linkIcons", {
-  //       opacity: 1,
-  //       y: 0,
-  //       duration: 0.8,
-  //       stagger: 0.2,
-  //     });
-  // }, []);
+  useLayoutEffect(() => {
+    let jobTitleTl = gsap.timeline();
+    jobTitleTl
+      .to(".pageName", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+      })
+      .to(".jobTitle", {
+        width: "auto",
+        duration: 1,
+      })
+      .to(".jobTitle", {
+        opacity: 1,
+        delay: 0.3,
+        ease: "linear",
+        duration: 0.5,
+      })
+      .to(".linkIcons", {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+      });
+  }, []);
 
   useEffect(() => {
-    let binaryChain = document.querySelector(".binaryChain");
+    gsap.fromTo(
+      ".binaryChain",
+      { x: 0 },
+      {
+        xPercent: -70,
+        duration: 700,
+        yoyo: true,
+        repeat: -1,
+        ease: "linear",
+      }
+    );
   }, []);
 
   return (
     <section className="bg-customBlack w-full h-[100vh] relative overflow-hidden">
-      <div className="w-full h-full flex items-center select-none text-[120vh] italic font font-NotoSansJapanses absolute left-[-25vw] rotate-[10deg] text-customGreen3 opacity-40">
-        <div className="bg-red-500 binaryChain">
-        </div>
+      <div className="w-full h-full flex items-center select-none text-[120vh] italic font font-NotoSansJapanses absolute left-[-25vw] rotate-[10deg] text-customGreen2 opacity-40">
+        <div className="binaryChain">01010101010101010101010101010101</div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full text-white flex justify-center items-center">
         <div className="flex flex-col items-center">
@@ -86,5 +95,13 @@ const HomeSection = () => {
     </section>
   );
 };
+
+function nextPage() {
+
+}
+
+function prevPage() {
+  
+}
 
 export default HomeSection;
