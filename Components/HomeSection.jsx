@@ -3,8 +3,10 @@ import { FaGithubSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsLinkedin, BsMeta } from "react-icons/bs";
 import { gsap } from "gsap";
+import { useActivePage } from "@/pages";
 
 const HomeSection = () => {
+  const { currentActivePage } = useActivePage();
   useLayoutEffect(() => {
     let jobTitleTl = gsap.timeline();
     jobTitleTl
@@ -47,7 +49,11 @@ const HomeSection = () => {
   }, []);
 
   return (
-    <section className="bg-customBlack w-full h-[100vh] relative overflow-hidden">
+    <section
+      className={`bg-customBlack w-full h-full fixed ${
+        currentActivePage !== 1 && "top-[100%]"
+      } homeSection`}
+    >
       <div className="w-full h-full flex items-center select-none text-[120vh] italic font font-NotoSansJapanses absolute left-[-25vw] rotate-[10deg] text-customGreen2 opacity-40">
         <div className="binaryChain">01010101010101010101010101010101</div>
       </div>
@@ -95,13 +101,5 @@ const HomeSection = () => {
     </section>
   );
 };
-
-function nextPage() {
-
-}
-
-function prevPage() {
-  
-}
 
 export default HomeSection;

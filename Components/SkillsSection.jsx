@@ -1,11 +1,18 @@
-import React from 'react'
+import { useActivePage } from "@/pages";
+import React from "react";
 
 const SkillsSection = () => {
-  return (
-    <section>
-      
-    </section>
-  )
-}
+  const { currentActivePage } = useActivePage();
 
-export default SkillsSection
+  return (
+    <section
+      className={`w-full h-full bg-red-500 ${
+        currentActivePage !== 3 && "top-[100%]"
+      } fixed text-[300px] skillsSection`}
+    >
+      <div>skills page</div>
+    </section>
+  );
+};
+
+export default SkillsSection;
