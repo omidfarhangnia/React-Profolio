@@ -11,6 +11,7 @@ const SectionContainer = ({ children }) => {
     sectionContainer.removeEventListener("wheel", handleChangeSection);
 
     if (e.deltaY > 0) {
+      // play animation
       goNext(currentActivePage, setCurrentActivePage);
       sectionContainer.addEventListener("wheel", handleChangeSection)
     } else {
@@ -29,20 +30,16 @@ const SectionContainer = ({ children }) => {
 
 function goNext(currentActivePage, setCurrentActivePage) {
   if (currentActivePage === 5) {
-    // play animation
     setCurrentActivePage(1);
   } else {
-    // play animation
     setCurrentActivePage(currentActivePage + 1);
   }
 }
 
 function goPrev(currentActivePage, setCurrentActivePage) {
   if (currentActivePage === 1) {
-    // play animation
     setCurrentActivePage(5);
   } else {
-    // play animation
     setCurrentActivePage(currentActivePage - 1);
   }
 }
