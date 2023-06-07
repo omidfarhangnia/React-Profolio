@@ -1,8 +1,8 @@
-import { useActivePage } from "@/pages";
-import React from "react";
+import { ActiveAndChangeActive } from "@/context/context";
+import React, { useContext } from "react";
 
 const SkillsSection = () => {
-  const { currentActivePage } = useActivePage();
+  const { currentActivePage } = useContext(ActiveAndChangeActive);
 
   return (
     <section

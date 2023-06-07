@@ -1,8 +1,8 @@
-import { useActivePage } from "@/pages";
-import React from "react";
+import { ActiveAndChangeActive } from "@/context/context";
+import React, { useContext } from "react";
 
 const ProjectSection = () => {
-  const { currentActivePage } = useActivePage();
+  const { currentActivePage } = useContext(ActiveAndChangeActive);
 
   return (
     <section

@@ -1,12 +1,13 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useContext, useEffect, useLayoutEffect } from "react";
 import { FaGithubSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsLinkedin, BsMeta } from "react-icons/bs";
 import { gsap } from "gsap";
-import { useActivePage } from "@/pages";
+import { ActiveAndChangeActive } from "@/context/context";
 
 const HomeSection = () => {
-  const { currentActivePage } = useActivePage();
+  const { currentActivePage } = useContext(ActiveAndChangeActive);
+
   useLayoutEffect(() => {
     let jobTitleTl = gsap.timeline();
     jobTitleTl

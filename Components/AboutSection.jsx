@@ -1,8 +1,8 @@
-import { useActivePage } from "@/pages";
-import React from "react";
+import { ActiveAndChangeActive } from "@/context/context";
+import React, { useContext } from "react";
 
 const AboutSection = () => {
-  const { currentActivePage } = useActivePage();
+  const { currentActivePage } = useContext(ActiveAndChangeActive);
   return (
     <section
       className={`w-full h-full bg-teal-500 ${
