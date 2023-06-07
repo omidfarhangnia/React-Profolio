@@ -6,7 +6,7 @@ import "../styles/font.css";
 import { gsap } from "gsap";
 
 export default function App({ Component, pageProps }) {
-  const [loaded, setIsLoaded] = useState(false);
+  const [loaded, setIsLoaded] = useState(true);
 
   useEffect(() => {
     // let loaderTl = gsap.timeline({onComplete: () => {
@@ -27,9 +27,11 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {loaded ? (
-        <Context>
-          <Component {...pageProps} />
-        </Context>
+        <>
+          <Context>
+            <Component {...pageProps} />
+          </Context>
+        </>
       ) : (
         <Loader />
       )}
