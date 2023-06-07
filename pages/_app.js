@@ -1,11 +1,38 @@
+import Loader from "@/Components/Loader";
 import Context from "@/context/context";
 import "@/styles/globals.css";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+import "../styles/font.css";
+import { gsap } from "gsap";
 
 export default function App({ Component, pageProps }) {
+  const [loaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // let loaderTl = gsap.timeline({onComplete: () => {
+    //   setIsLoaded(true)
+    // }});
+    // loaderTl
+    // .to(".loaderBineriesNumber", {
+    //   opacity: 1,
+    //   duration: 1,
+    //   stagger: .03,
+    //   ease: "power4.out"
+    // })
+    // .to(".loaderGreenBg", {
+    //   opacity: 1,
+    // })
+  }, []);
+
   return (
-    <Context>
-      <Component {...pageProps} />
-    </Context>
+    <>
+      {loaded ? (
+        <Context>
+          <Component {...pageProps} />
+        </Context>
+      ) : (
+        <Loader />
+      )}
+    </>
   );
 }

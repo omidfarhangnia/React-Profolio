@@ -5,7 +5,6 @@ import ProjectSection from "@/Components/ProjectSection";
 import SayHelloSection from "@/Components/SayHelloSection";
 import SectionContainer from "@/Components/SectionContainer";
 import SkillsSection from "@/Components/SkillsSection";
-import Context from "@/context/context";
 
 export default function Home() {
   return (

@@ -15,8 +15,9 @@ module.exports = {
         customGreen1: "#1DE429",
         customGreen2: "#319d0f",
         customGreen3: "#104604",
+        customGreen4: "#246510",
         customBlack: "#111111"
-      }
+      },
     },
   },
   plugins: [],

@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 
+/* check it later */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&display=swap');
 
 /* default font names === 'Courier New', Courier, monospace; */
 
@@ -14,6 +16,10 @@
     }
     .font-NotoSansJapanses{
         font-family: 'Noto Sans JP', sans-serif;
+    }
+    .font-BIZ {
+        font-family: 'BIZ UDPMincho';
+        text-shadow: 0 0 9px rgb(74, 135, 72);
     }
     .transition-75 {
         transition: all .75s;
