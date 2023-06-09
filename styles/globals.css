@@ -19,7 +19,7 @@
     }
     .font-BIZ {
         font-family: 'BIZ UDPMincho';
-        text-shadow: 0 0 9px rgb(74, 135, 72);
+        /* text-shadow: 0 0 9px rgb(74, 135, 72); */
     }
     .transition-75 {
         transition: all .75s;
