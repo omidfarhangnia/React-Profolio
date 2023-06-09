@@ -6,7 +6,9 @@ import "../styles/font.css";
 import { gsap } from "gsap";
 
 export default function App({ Component, pageProps }) {
-  const [loaded, setIsLoaded] = useState(false);
+  // const [loaded, setIsLoaded] = useState(false);
+  // disabiling loader for page
+  const [loaded, setIsLoaded] = useState(true);
 
   return (
     <>
