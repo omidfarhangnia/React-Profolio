@@ -11,17 +11,35 @@ const ProjectSection = () => {
       const projectSectionTl = gsap.timeline();
       projectSectionTl
         .to(".fanContainer > span", {
-          rotate: 360,
-          duration: 1,
-          ease: "power4.in",
+          rotate: 3600,
+          duration: 3,
+          ease: "power4.inOut",
+          delay: 1,
         })
-        .to(".fanContainer > span", {
-          rotate: 360,
-          duration: 10,
-          repeat: 10,
-          ease: "linear",
-          repeat: 15,
-        })
+        .to(
+          ".projectBinaryCover",
+          {
+            scale: 0,
+            duration: 1,
+            ease: "expo.out",
+          },
+          "-=1"
+        )
+        .to(
+          ".projectBinaryCover",
+          {
+            opacity: 0,
+            duration: 0.8,
+            ease: "expo.in",
+          },
+          "-=.5"
+        )
+        .to(".projectAnimationContainer", {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power4.out",
+          delay: .3,
+        });
     }
   }, [currentActivePage]);
 
@@ -32,108 +50,879 @@ const ProjectSection = () => {
       } fixed projectSection`}
     >
       <div className="w-full h-full bg-black flex items-center justify-center">
-        <div className="w-[90%] min-h-[600px] mt-[10vh] rounded-[30px] border-2 border-solid border-customGreen2/30 flex flex-wrap justify-around items-start gap-y-3 p-10">
-          <div className="h-[200px] bg-green-500 w-[250px] md:w-[300px] md:h-[230px] relative">
-            <div className="projectBinaryCover select-none w-full h-full text-customGreen2 text-[30px] text-center break-words overflow-hidden absolute top-0 left-0 bg-yellow-600">
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>1</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>1</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>1</span>
-              <span>1</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
-              <span>1</span>
-              <span>0</span>
-              <span>0</span>
+        <div className="w-[90%] h-[70%] mt-[10vh] border-2 border-solid border-customGreen2 flex flex-wrap justify-around items-center gap-7 p-10 overflow-y-scroll projectsContainer">
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
             </div>
-            <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
-              <span>
-                <BsFan size={60} />
-              </span>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
             </div>
           </div>
-          <div className="h-[200px] bg-green-500 w-[250px] md:w-[300px] md:h-[230px]"></div>
-          <div className="h-[200px] bg-green-500 w-[250px] md:w-[300px] md:h-[230px]"></div>
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
+            </div>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
+            </div>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
+            </div>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
+            </div>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
+            </div>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
+            </div>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative">
+            <div className="w-full h-full bg-customGreen2 absolute top-0 left-0">
+              {/* project image */}
+              <img className="w-full h-[60%] bg-blue-500" />
+              {/* project name */}
+              <h3 className="text-center text-[20px] md:text-[25px] lg:text-[30px] capitalize mt-5 font-semibold">
+                project name
+              </h3>
+            </div>
+            <div className="w-full h-full absolute bg-white projectAnimationContainer">
+              <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-white text-customBlack text-center break-words overflow-hidden absolute top-0 left-0">
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>1</span>
+                <span>1</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+                <span>1</span>
+                <span>0</span>
+                <span>0</span>
+              </div>
+              <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
+                <span>
+                  <BsFan size={60} />
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

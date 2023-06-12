@@ -29,6 +29,18 @@
         animation: navBinaryAnime 1s infinite alternate-reverse;
     }
 
+    .projectsContainer::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .projectsContainer::-webkit-scrollbar-track {
+        background: black;
+    }
+
+    .projectsContainer::-webkit-scrollbar-thumb {
+        background: #104604;
+    }
+
     @keyframes navBinaryAnime {
         0% {
             transform: translate(0, 0);
