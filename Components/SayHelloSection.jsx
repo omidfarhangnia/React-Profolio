@@ -1,11 +1,37 @@
 import { ActiveAndChangeActive } from "@/context/context";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FaGithubSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsLinkedin, BsMeta } from "react-icons/bs";
+import { gsap } from "gsap";
 
 const SayHelloSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);
+
+  useEffect(() => {
+    if (currentActivePage === 5) {
+      const sayHelloTl = gsap.timeline();
+      sayHelloTl.to(".overloads > span", {
+        opacity: 1,
+        duration: 2,
+        stagger: 0.02,
+        ease: "power2.out",
+      })
+      .to(".sayHelloForm", {
+        opacity: 1,
+        duration: .5,
+        ease: "linear"
+      }, "-=.5")
+      .to(".sayHelloFooter", {
+        scaleY: 1,
+        duration: .5
+      }, "-=.5")
+      .to(".sayHelloFooter > *", {
+        opacity: 1,
+        duration: .5
+      })
+    }
+  }, [currentActivePage]);
 
   return (
     <section
@@ -13,8 +39,81 @@ const SayHelloSection = () => {
         currentActivePage !== 5 && "top-[100%]"
       } fixed sayHelloSection`}
     >
-      <div className="overloads break-words text-customGreen3/80 text-[100px] md:text-[140px] lg:text-[180px] w-full h-full text-center absolute top-[10%] md:top-[8%] left-0 select-none">
-        01010111000001101001000010101011100000110100100001010101001010010101001010
+      <div className="overloads break-words text-customGreen3/80 text-[100px] md:text-[140px] lg:text-[180px] w-full h-full text-center absolute top-[10%] md:top-[8%] left-0 select-none [&>span]:opacity-0">
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
+        <span>1</span>
+        <span>0</span>
       </div>
       <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-end gap-5">
         <div className="w-full h-auto flex justify-center items-center">
@@ -22,7 +121,7 @@ const SayHelloSection = () => {
             onSubmit={(e) => {
               e.preventDefault();
             }}
-            className="bg-customGreen3/50 w-[90%] max-w-[900px] flex flex-col gap-4 p-5"
+            className="sayHelloForm opacity-0 bg-customGreen3/50 w-[90%] max-w-[900px] flex flex-col gap-4 p-5"
           >
             {/* this is for name */}
             <div className="w-full flex flex-wrap justify-between items-center">
@@ -88,7 +187,7 @@ const SayHelloSection = () => {
             </button>
           </form>
         </div>
-        <footer className="w-full h-[15%] md:h-[10%] bg-customBlack">
+        <footer className="w-full h-[15%] md:h-[10%] bg-customBlack  scale-y-0 sayHelloFooter [&>*]:opacity-0">
           <div className="w-full h-full flex flex-row items-center justify-between p-5 max-w-[1100px] mx-auto">
             <h1 className="text-[20px] md:text-[25px] capitalize italic bold text-white">
               omid farhangnia
