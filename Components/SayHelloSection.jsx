@@ -186,7 +186,7 @@ const SayHelloSection = () => {
               />
             </div>
             {/* this is for message */}
-            <div className="w-full flex flex-wrap justify-between items-center">
+            <div className="w-full flex flex-wrap justify-between items-start">
               <label
                 className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0"
                 htmlFor="messageInput"

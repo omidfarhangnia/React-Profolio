@@ -127,7 +127,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <div
+      {/* <div
         className="select-none font-NotoSansJapanses text-customGreen4/70 w-full overflow-hidden tracking-[6px] mt-[-11px] text-[17px] translate-x-[-6px] navBinaryAnime"
         style={{ animationDelay: ".2s" }}
       >
@@ -156,7 +156,7 @@ const Navbar = () => {
         style={{ animationDelay: "0" }}
       >
         01100011111101000110000101110010000100000001111011001110000101101100110011001011010101101001101011100110001111110100011000010111001000010000000111101100111000010110110011001100101101010110100110101110
-      </div>
+      </div> */}
     </header>
   );
 };
