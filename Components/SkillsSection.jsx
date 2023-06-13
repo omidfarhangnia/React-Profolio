@@ -36,52 +36,52 @@ const SkillsSection = () => {
         <span>1</span>
         <span>0</span>
       </div>
-      <div className="w-[90%] max-w-[1000px] bg-customGreen3/40 z-10 rounded-[30px] flex items-center justify-around md:items-start flex-wrap p-10 text-white gap-y-5">
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+      <div className="scrollNeededContainer w-[90%] max-w-[1000px] h-[70%] mt-20 md:mt-0 overflow-y-scroll bg-customGreen3/40 z-10 flex items-center justify-around md:items-center flex-wrap p-10 text-white gap-y-5 md:gap-y-2 lg:gap-y-0">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>
-        <div className="md:w-auto flex justify-between min-w-[300px] max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
+        <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
           <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white"></span>
           <span className="text-[25px] md:text-[35px]">test 1</span>
         </div>

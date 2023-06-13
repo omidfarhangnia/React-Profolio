@@ -29,15 +29,15 @@
         animation: navBinaryAnime 1s infinite alternate-reverse;
     }
 
-    .projectsContainer::-webkit-scrollbar {
+    .scrollNeededContainer::-webkit-scrollbar {
         width: 10px;
     }
 
-    .projectsContainer::-webkit-scrollbar-track {
+    .scrollNeededContainer::-webkit-scrollbar-track {
         background: black;
     }
 
-    .projectsContainer::-webkit-scrollbar-thumb {
+    .scrollNeededContainer::-webkit-scrollbar-thumb {
         background: #104604;
     }
 

@@ -11,25 +11,39 @@ const SayHelloSection = () => {
   useEffect(() => {
     if (currentActivePage === 5) {
       const sayHelloTl = gsap.timeline();
-      sayHelloTl.to(".overloads > span", {
-        opacity: 1,
-        duration: 2,
-        stagger: 0.02,
-        ease: "power2.out",
-      })
-      .to(".sayHelloForm", {
-        opacity: 1,
-        duration: .5,
-        ease: "linear"
-      }, "-=.5")
-      .to(".sayHelloFooter", {
-        scaleY: 1,
-        duration: .5
-      }, "-=.5")
-      .to(".sayHelloFooter > *", {
-        opacity: 1,
-        duration: .5
-      })
+      sayHelloTl
+        .to(".overloads > span", {
+          opacity: 1,
+          duration: 2,
+          stagger: 0.02,
+          ease: "power2.out",
+        })
+        .to(
+          ".sayHelloHeader",
+          {
+            opacity: 1,
+            duration: 0.5,
+            ease: "linear",
+          },
+          "-=.5"
+        )
+        .to(".sayHelloForm", {
+          opacity: 1,
+          duration: 0.5,
+          ease: "linear",
+        })
+        .to(
+          ".sayHelloFooter",
+          {
+            scaleY: 1,
+            duration: 0.5,
+          },
+          "-=.5"
+        )
+        .to(".sayHelloFooter > *", {
+          opacity: 1,
+          duration: 0.5,
+        });
     }
   }, [currentActivePage]);
 
@@ -116,7 +130,10 @@ const SayHelloSection = () => {
         <span>0</span>
       </div>
       <div className="w-full h-full absolute top-0 left-0 flex flex-col justify-end gap-5">
-        <div className="w-full h-auto flex justify-center items-center">
+        <div className="w-full h-auto flex flex-col justify-center items-center">
+          <h2 className="sayHelloHeader text-white text-[26px] md:text-[33px] lg:text-[40px] mb-5 capitalize font-semibold opacity-0">
+            say hello to me
+          </h2>
           <form
             onSubmit={(e) => {
               e.preventDefault();
