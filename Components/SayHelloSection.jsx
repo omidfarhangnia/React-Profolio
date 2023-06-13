@@ -1,5 +1,8 @@
 import { ActiveAndChangeActive } from "@/context/context";
 import React, { useContext } from "react";
+import { FaGithubSquare } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { BsLinkedin, BsMeta } from "react-icons/bs";
 
 const SayHelloSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);
@@ -23,28 +26,99 @@ const SayHelloSection = () => {
           >
             {/* this is for name */}
             <div className="w-full flex flex-wrap justify-between items-center">
-              <label className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0" htmlFor="firstNameInput">your name : </label>
-              <input className="w-[50%] max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] min-w-[200px] px-6 py-2 rounded-full focus:outline-none" type="text" placeholder="first name" id="firstNameInput" />
+              <label
+                className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0"
+                htmlFor="firstNameInput"
+              >
+                your name :{" "}
+              </label>
+              <input
+                className="w-full md:w-[50%] md:max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] min-w-[200px] px-6 py-2 rounded-full bg-transparent border-[1px] border-solid border-white text-white focus:outline-none"
+                type="text"
+                placeholder="first name"
+                id="firstNameInput"
+              />
             </div>
             {/* this is for last name */}
             <div className="w-full flex flex-wrap justify-between items-center">
-              <label className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0" htmlFor="lastNameInput">your last name : </label>
-              <input className="w-[50%] max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] min-w-[200px] px-6 py-2 rounded-full focus:outline-none" type="text" placeholder="last name" id="lastNameInput" />
+              <label
+                className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0"
+                htmlFor="lastNameInput"
+              >
+                your last name :{" "}
+              </label>
+              <input
+                className="w-full md:w-[50%] md:max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] min-w-[200px] px-6 py-2 rounded-full bg-transparent border-[1px] border-solid border-white text-white focus:outline-none"
+                type="text"
+                placeholder="last name"
+                id="lastNameInput"
+              />
             </div>
             {/* this is for email */}
             <div className="w-full flex flex-wrap justify-between items-center">
-              <label className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0" htmlFor="emailInput">email : </label>
-              <input className="w-[50%] max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] min-w-[200px] px-6 py-2 rounded-full focus:outline-none" type="email" placeholder="email" id="emailInput" />
+              <label
+                className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0"
+                htmlFor="emailInput"
+              >
+                email :{" "}
+              </label>
+              <input
+                className="w-full md:w-[50%] md:max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] min-w-[200px] px-6 py-2 rounded-full bg-transparent border-[1px] border-solid border-white text-white focus:outline-none"
+                type="email"
+                placeholder="email"
+                id="emailInput"
+              />
             </div>
             {/* this is for message */}
             <div className="w-full flex flex-wrap justify-between items-center">
-              <label className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0" htmlFor="messageInput">message : </label>
-              <textarea className="w-[50%] max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] min-w-[200px] md:h-[230px] md:rounded-lg px-6 py-2 rounded-full focus:outline-none resize-none" placeholder="your message" id="messageInput"></textarea>
+              <label
+                className="capitalize w-[50%] text-[14px] md:text-[18px] lg:text-[23px] text-white mb-2 md:mb-0 ml-3 md:ml-0"
+                htmlFor="messageInput"
+              >
+                message :{" "}
+              </label>
+              <textarea
+                className="w-full md:w-[50%] md:max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] md:h-[230px] md:rounded-lg px-6 py-2 rounded-full bg-transparent border-[1px] border-solid border-white text-white focus:outline-none resize-none"
+                placeholder="your message"
+                id="messageInput"
+              ></textarea>
             </div>
-            <button className="bg-white text-customGreen2/90 p-3 text-[14px] md:text-[18px] lg:text-[23px] rounded-full uppercase mt-6">send</button>
+            <button className="bg-white text-customGreen3/90 p-3 text-[14px] md:text-[20px] lg:text-[25px] rounded-full uppercase mt-6 font-bold">
+              send
+            </button>
           </form>
         </div>
-        <footer className="w-full h-[15%] md:h-[10%] bg-blue-500">this is footer</footer>
+        <footer className="w-full h-[15%] md:h-[10%] bg-customBlack">
+          <div className="w-full h-full flex flex-row items-center justify-between p-5 max-w-[1100px] mx-auto">
+            <h1 className="text-[20px] md:text-[25px] capitalize italic bold text-white">
+              omid farhangnia
+            </h1>
+            <nav>
+              <ul className="flex items-center gap-4 md:gap-6">
+                <li>
+                  <a href="#">
+                    <FaGithubSquare size={23} style={{ fill: "#ffffff" }} />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <AiFillInstagram size={23} style={{ fill: "#ffffff" }} />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <BsLinkedin size={23} style={{ fill: "#ffffff" }} />
+                  </a>
+                </li>
+                <li>
+                  <a>
+                    <BsMeta size={23} style={{ fill: "#ffffff" }} />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
       </div>
     </section>
   );
