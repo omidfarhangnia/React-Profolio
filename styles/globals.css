@@ -24,11 +24,6 @@
     .transition-75 {
         transition: all .75s;
     }
-
-    .navBinaryAnime {
-        animation: navBinaryAnime 1s infinite alternate-reverse;
-    }
-
     .scrollNeededContainer::-webkit-scrollbar {
         width: 10px;
     }
@@ -39,14 +34,5 @@
 
     .scrollNeededContainer::-webkit-scrollbar-thumb {
         background: #104604;
-    }
-
-    @keyframes navBinaryAnime {
-        0% {
-            transform: translate(0, 0);
-        }
-        100% {
-            transform: translate(0, 2px);
-        }
     }
 }

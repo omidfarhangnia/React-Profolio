@@ -1,12 +1,20 @@
 import { ActiveAndChangeActive } from "@/context/context";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaGithubSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsLinkedin, BsMeta } from "react-icons/bs";
 import { gsap } from "gsap";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/pages/firebase";
 
 const SayHelloSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);
+  const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
 
   useEffect(() => {
     if (currentActivePage === 5) {
@@ -46,6 +54,42 @@ const SayHelloSection = () => {
         });
     }
   }, [currentActivePage]);
+
+  function handleInputChange(e) {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  async function handleButtonClick() {
+    if (!formIsValid()) {
+      // send error message
+      return;
+    };
+    try {
+      await addDoc(collection(db, "helloSended"), data).then(() => {
+        setData({ firstName: "", lastName: "", email: "", message: "" });
+      });
+      // send success message
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  function formIsValid() {
+    if (data.firstName === "") {
+      return false;
+    } else if (data.lastName === "") {
+      return false;
+    } else if (!data.email.includes("@") || !data.email.endsWith(".com")) {
+      return false;
+    } else if (data.message.length === "") {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   return (
     <section
@@ -153,6 +197,9 @@ const SayHelloSection = () => {
                 type="text"
                 placeholder="first name"
                 id="firstNameInput"
+                value={data.firstName}
+                name="firstName"
+                onChange={handleInputChange}
               />
             </div>
             {/* this is for last name */}
@@ -168,6 +215,9 @@ const SayHelloSection = () => {
                 type="text"
                 placeholder="last name"
                 id="lastNameInput"
+                value={data.lastName}
+                name="lastName"
+                onChange={handleInputChange}
               />
             </div>
             {/* this is for email */}
@@ -183,6 +233,9 @@ const SayHelloSection = () => {
                 type="email"
                 placeholder="email"
                 id="emailInput"
+                value={data.email}
+                name="email"
+                onChange={handleInputChange}
               />
             </div>
             {/* this is for message */}
@@ -197,9 +250,15 @@ const SayHelloSection = () => {
                 className="w-full md:w-[50%] md:max-w-[300px] text-[14px] md:text-[18px] lg:text-[20px] md:h-[230px] md:rounded-lg px-6 py-2 rounded-full bg-transparent border-[1px] border-solid border-white text-white focus:outline-none resize-none"
                 placeholder="your message"
                 id="messageInput"
+                value={data.message}
+                name="message"
+                onChange={handleInputChange}
               ></textarea>
             </div>
-            <button className="bg-white text-customGreen3/90 p-3 text-[14px] md:text-[20px] lg:text-[25px] rounded-full uppercase mt-6 font-bold">
+            <button
+              className="bg-white text-customGreen3/90 p-3 text-[14px] md:text-[20px] lg:text-[25px] rounded-full uppercase mt-6 font-bold"
+              onClick={handleButtonClick}
+            >
               send
             </button>
           </form>
