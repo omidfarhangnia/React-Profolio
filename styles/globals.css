@@ -1,38 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-/* check it later */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400;700&display=swap');
-
 /* default font names === 'Courier New', Courier, monospace; */
 
 @layer components {
-    .font-DancingScript {
-        font-family: 'Dancing Script', cursive;
-    }
-    .font-NotoSansJapanses{
-        font-family: 'Noto Sans JP', sans-serif;
-    }
-    .font-BIZ {
-        font-family: 'BIZ UDPMincho';
-        /* text-shadow: 0 0 9px rgb(74, 135, 72); */
-    }
-    .transition-75 {
-        transition: all .75s;
-    }
-    .scrollNeededContainer::-webkit-scrollbar {
-        width: 10px;
-    }
+  .transition-75 {
+    transition: all 0.75s;
+  }
+  .scrollNeededContainer::-webkit-scrollbar {
+    width: 10px;
+  }
 
-    .scrollNeededContainer::-webkit-scrollbar-track {
-        background: black;
-    }
+  .scrollNeededContainer::-webkit-scrollbar-track {
+    background: black;
+  }
 
-    .scrollNeededContainer::-webkit-scrollbar-thumb {
-        background: #104604;
-    }
+  .scrollNeededContainer::-webkit-scrollbar-thumb {
+    background: #104604;
+  }
 }
