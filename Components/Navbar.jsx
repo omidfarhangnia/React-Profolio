@@ -26,12 +26,14 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full z-10">
-      <nav className="flex flex-col items-center md:flex-row md:px-8 lg:px-16 md:justify-between p-5 gap-4 text-white bg-customGreen4">
-        <div className="capitalize md:text-2xl lg:text-3xl font-DancingScript">
-          <a href="#">omid farhangnia</a>
+      <nav className="flex flex-row items-center md:px-8 lg:px-16 justify-between p-5 gap-4 text-white bg-customGreen4">
+        <div className="capitalize text-2xl md:text-3xl lg:text-4xl font-extralight">
+          <a href="#" className="font-lobster">
+            omid farhangnia
+          </a>
         </div>
-        <ul className="flex justify-between w-full md:max-w-[50%]">
-          <li className="relative overflow-hidden group capitalize text-[18px] lg:text-[20px] cursor-pointer">
+        <ul className="hidden md:flex justify-between w-full md:max-w-[50%] font-comfortaa">
+          <li className="relative overflow-hidden group capitalize text-[13px] md:text-[17px] lg:text-[20px] cursor-pointer">
             <span
               className={`absolute top-0 left-0 group-hover:top-[100%] transition-75 ${
                 currentActivePage === 1 && "underline"
@@ -50,7 +52,7 @@ const Navbar = () => {
             <span className="invisible">Home</span>
           </li>
 
-          <li className="relative overflow-hidden group capitalize text-[18px] lg:text-[20px] cursor-pointer">
+          <li className="relative overflow-hidden group capitalize text-[13px] md:text-[17px] lg:text-[20px] cursor-pointer">
             <span
               className={`absolute top-0 left-0 group-hover:top-[100%] transition-75 ${
                 currentActivePage === 2 && "underline"
@@ -69,7 +71,7 @@ const Navbar = () => {
             <span className="invisible">About</span>
           </li>
 
-          <li className="relative overflow-hidden group capitalize text-[18px] lg:text-[20px] cursor-pointer">
+          <li className="relative overflow-hidden group capitalize text-[13px] md:text-[17px] lg:text-[20px] cursor-pointer">
             <span
               className={`absolute top-0 left-0 group-hover:top-[100%] transition-75 ${
                 currentActivePage === 3 && "underline"
@@ -88,7 +90,7 @@ const Navbar = () => {
             <span className="invisible">Skills</span>
           </li>
 
-          <li className="relative overflow-hidden group capitalize text-[18px] lg:text-[20px] cursor-pointer">
+          <li className="relative overflow-hidden group capitalize text-[13px] md:text-[17px] lg:text-[20px] cursor-pointer">
             <span
               className={`absolute top-0 left-0 group-hover:top-[100%] transition-75 ${
                 currentActivePage === 4 && "underline"
@@ -107,7 +109,7 @@ const Navbar = () => {
             <span className="invisible">Project</span>
           </li>
 
-          <li className="relative overflow-hidden group capitalize text-[18px] lg:text-[20px] cursor-pointer">
+          <li className="relative overflow-hidden group capitalize text-[13px] md:text-[17px] lg:text-[20px] cursor-pointer">
             <span
               className={`absolute top-0 left-0 group-hover:top-[100%] transition-75 ${
                 currentActivePage === 5 && "underline"
@@ -126,6 +128,14 @@ const Navbar = () => {
             <span className="invisible">Say hello</span>
           </li>
         </ul>
+        <div
+          className="flex md:hidden flex-col bg-white w-[50px] h-[50px] justify-center items-center gap-[7px] rounded-lg"
+          id="burgerMenu"
+        >
+          <div className="w-[80%] h-[10%] bg-customGreen4 rounded-lg"></div>
+          <div className="w-[80%] h-[10%] bg-customGreen4 rounded-lg"></div>
+          <div className="w-[80%] h-[10%] bg-customGreen4 rounded-lg"></div>
+        </div>
       </nav>
     </header>
   );

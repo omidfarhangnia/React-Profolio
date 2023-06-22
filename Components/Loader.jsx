@@ -76,7 +76,7 @@ const Loader = ({ setIsLoaded }) => {
   }, []);
 
   return (
-    <div className="w-full h-[100vh] overflow-hidden bg-black text-customGreen2 select-none text-[70px] md:text-[110px] lg:text-[150px] grid place-items-center relative font-BIZ">
+    <div className="w-full h-[100vh] overflow-hidden bg-black text-customGreen2 select-none text-[70px] md:text-[110px] lg:text-[150px] grid place-items-center relative">
       <span className="absolute binaryNumber">0</span>
       <span className="absolute binaryNumber">1</span>
       <span className="absolute binaryNumber">0</span>

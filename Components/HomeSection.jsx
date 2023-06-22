@@ -61,7 +61,7 @@ const HomeSection = () => {
         currentActivePage !== 1 && "top-[100%]"
       } homeSection`}
     >
-      <div className="w-full h-full flex items-center select-none text-[120vh] italic font font-NotoSansJapanses absolute left-[-25vw] rotate-[10deg] text-customGreen2 opacity-40">
+      <div className="w-full h-full flex items-center select-none text-[120vh] italic absolute left-[-25vw] rotate-[10deg] text-customGreen2 opacity-40">
         <div className="binaryChain">01010101010101010101010101010101</div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full text-white flex justify-center items-center">
