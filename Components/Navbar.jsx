@@ -5,6 +5,14 @@ const Navbar = () => {
   const { currentActivePage, setCurrentActivePage } = useContext(
     ActiveAndChangeActive
   );
+
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".navLinks");
+    navLinks.forEach((e) => {
+      e.addEventListener("click", handleClick);
+    });
+  }, [currentActivePage]);
+
   function handleClick(e) {
     const navLinks = document.querySelectorAll(".navLinks");
     navLinks.forEach((e) => {
@@ -17,12 +25,13 @@ const Navbar = () => {
     }, 500);
   }
 
-  useEffect(() => {
-    const navLinks = document.querySelectorAll(".navLinks");
-    navLinks.forEach((e) => {
-      e.addEventListener("click", handleClick);
-    });
-  }, [currentActivePage]);
+  function handleClickOpenMenu() {
+    // play animation
+    const burgerMenu = document.getElementById("burgerMenuPage");
+    burgerMenu.classList.add("flex");
+    burgerMenu.classList.remove("hidden");
+  }
+
 
   return (
     <header className="fixed top-0 left-0 w-full z-10">
@@ -130,7 +139,8 @@ const Navbar = () => {
         </ul>
         <div
           className="flex md:hidden flex-col bg-white w-[50px] h-[50px] justify-center items-center gap-[7px] rounded-lg"
-          id="burgerMenu"
+          id="burgerMenuButton"
+          onClick={handleClickOpenMenu}
         >
           <div className="w-[80%] h-[10%] bg-customGreen4 rounded-lg"></div>
           <div className="w-[80%] h-[10%] bg-customGreen4 rounded-lg"></div>

@@ -1,10 +1,18 @@
 import { ActiveAndChangeActive } from "@/context/context";
 import React, { useContext, useEffect } from "react";
+import { ImCross } from "react-icons/im";
 
 export default function BurgerMenu() {
   const { currentActivePage, setCurrentActivePage } = useContext(
     ActiveAndChangeActive
   );
+
+  useEffect(() => {
+    const navLinks = document.querySelectorAll(".navLinks");
+    navLinks.forEach((e) => {
+      e.addEventListener("click", handleClick);
+    });
+  }, [currentActivePage]);
 
   function handleClick(e) {
     const navLinks = document.querySelectorAll(".navLinks");
@@ -17,24 +25,31 @@ export default function BurgerMenu() {
       setCurrentActivePage(Number(selectedNumber));
     }, 500);
   }
+  
+  function handleClickCloseMenu() {
+    // play animation
+    const burgerMenu = document.getElementById("burgerMenuPage");
+    burgerMenu.classList.add("hidden");
+    burgerMenu.classList.remove("flex");
+  }
 
-  useEffect(() => {
-    const navLinks = document.querySelectorAll(".navLinks");
-    navLinks.forEach((e) => {
-      e.addEventListener("click", handleClick);
-    });
-  }, [currentActivePage]);
- 
   return (
     <>
-      <div className="w-full h-full py-[20vh] bg-customBlack fixed top-0 left-0 z-20">
-        <ul className="flex flex-col justify-around items-center w-full h-full md:max-w-[50%] font-comfortaa">
+      <div
+        className="hidden w-full h-full items-center justify-center bg-customBlack fixed z-20"
+        id="burgerMenuPage"
+      >
+        <div
+          className="absolute top-0 left-0 w-full bg-customGreen1/20 rounded-br-[30px] rounded-bl-[30px] flex justify-center items-center p-5"
+          onClick={handleClickCloseMenu}
+        >
+          <ImCross size={30} fill="#1DE429" />
+        </div>
+        <ul className="flex flex-col py-[20vh] justify-around items-center w-full h-full md:max-w-[50%] font-comfortaa">
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkId={1}
-              className={`${
-                currentActivePage === 1 && "underline"
-              } navLinks`}
+              className={`${currentActivePage === 1 && "underline"} navLinks`}
             >
               Home
             </span>
@@ -42,9 +57,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkId={2}
-              className={`${
-                currentActivePage === 2 && "underline"
-              } navLinks`}
+              className={`${currentActivePage === 2 && "underline"} navLinks`}
             >
               About
             </span>
@@ -52,9 +65,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkId={3}
-              className={`${
-                currentActivePage === 3 && "underline"
-              } navLinks`}
+              className={`${currentActivePage === 3 && "underline"} navLinks`}
             >
               Skills
             </span>
@@ -62,9 +73,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkId={4}
-              className={`${
-                currentActivePage === 4 && "underline"
-              } navLinks`}
+              className={`${currentActivePage === 4 && "underline"} navLinks`}
             >
               Project
             </span>
@@ -72,15 +81,12 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkId={5}
-              className={`${
-                currentActivePage === 5 && "underline"
-              } navLinks`}
+              className={`${currentActivePage === 5 && "underline"} navLinks`}
             >
               Say hello
             </span>
           </li>
         </ul>
-        <div className="absolute top-0 left-0 text-[140px] h-[110px] flex justify-center items-center font-roboto text-customGreen1/30 burgerBinary">0</div>
       </div>
     </>
   );
