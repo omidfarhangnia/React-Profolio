@@ -18,7 +18,7 @@ const Navbar = () => {
     navLinks.forEach((e) => {
       e.removeEventListener("click", handleClick);
     });
-    const selectedNumber = e.target.getAttribute("linkId");
+    const selectedNumber = e.target.getAttribute("linkid");
     // everything is ok
     setTimeout(() => {
       setCurrentActivePage(Number(selectedNumber));
@@ -51,7 +51,7 @@ const Navbar = () => {
               Home
             </span>
             <span
-              linkId={1}
+              linkid={1}
               className={`absolute bottom-[100%] left-0 group-hover:bottom-0 transition-75 ${
                 currentActivePage === 1 && "underline"
               } navLinks`}
@@ -70,7 +70,7 @@ const Navbar = () => {
               About
             </span>
             <span
-              linkId={2}
+              linkid={2}
               className={`absolute bottom-[100%] left-0 group-hover:bottom-0 transition-75 ${
                 currentActivePage === 2 && "underline"
               } navLinks`}
@@ -89,7 +89,7 @@ const Navbar = () => {
               Skills
             </span>
             <span
-              linkId={3}
+              linkid={3}
               className={`absolute bottom-[100%] left-0 group-hover:bottom-0 transition-75 ${
                 currentActivePage === 3 && "underline"
               } navLinks`}
@@ -108,7 +108,7 @@ const Navbar = () => {
               Project
             </span>
             <span
-              linkId={4}
+              linkid={4}
               className={`absolute bottom-[100%] left-0 group-hover:bottom-0 transition-75 ${
                 currentActivePage === 4 && "underline"
               } navLinks`}
@@ -127,7 +127,7 @@ const Navbar = () => {
               Say hello
             </span>
             <span
-              linkId={5}
+              linkid={5}
               className={`absolute bottom-[100%] left-0 group-hover:bottom-0 transition-75 ${
                 currentActivePage === 5 && "underline"
               } navLinks`}

@@ -19,7 +19,7 @@ export default function BurgerMenu() {
     navLinks.forEach((e) => {
       e.removeEventListener("click", handleClick);
     });
-    const selectedNumber = e.target.getAttribute("linkId");
+    const selectedNumber = e.target.getAttribute("linkid");
     // everything is ok
     setTimeout(() => {
       setCurrentActivePage(Number(selectedNumber));
@@ -48,7 +48,7 @@ export default function BurgerMenu() {
         <ul className="flex flex-col py-[20vh] justify-around items-center w-full h-full md:max-w-[50%] font-comfortaa">
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
-              linkId={1}
+              linkid={1}
               className={`${currentActivePage === 1 && "underline"} navLinks`}
             >
               Home
@@ -56,7 +56,7 @@ export default function BurgerMenu() {
           </li>
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
-              linkId={2}
+              linkid={2}
               className={`${currentActivePage === 2 && "underline"} navLinks`}
             >
               About
@@ -64,7 +64,7 @@ export default function BurgerMenu() {
           </li>
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
-              linkId={3}
+              linkid={3}
               className={`${currentActivePage === 3 && "underline"} navLinks`}
             >
               Skills
@@ -72,7 +72,7 @@ export default function BurgerMenu() {
           </li>
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
-              linkId={4}
+              linkid={4}
               className={`${currentActivePage === 4 && "underline"} navLinks`}
             >
               Project
@@ -80,7 +80,7 @@ export default function BurgerMenu() {
           </li>
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
-              linkId={5}
+              linkid={5}
               className={`${currentActivePage === 5 && "underline"} navLinks`}
             >
               Say hello

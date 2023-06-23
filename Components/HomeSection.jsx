@@ -47,12 +47,6 @@ const HomeSection = () => {
         ease: "linear",
       }
     );
-
-    gsap.to(".binaryZero", {
-      opacity: 1,
-      duration: 1.6,
-      ease: "power4.out"
-    })
   }, []);
 
   return (
@@ -105,7 +99,6 @@ const HomeSection = () => {
           </div>
         </div>
       </div>
-      {/* <div className="w-full h-full absolute flex justify-center items-center text-white text-[1100px] text-center z-10 opacity-0 binaryZero">0</div> */}
     </section>
   );
 };
