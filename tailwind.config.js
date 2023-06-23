@@ -21,7 +21,8 @@ module.exports = {
       fontFamily: {
         lobster: ["Lobster", "cursive"],
         comfortaa: ["Comfortaa", "cursive"],
-        roboto: ["Roboto", "sans-serif"]
+        roboto: ["Roboto", "sans-serif"],
+        flowCircular: ['Flow Circular', "cursive"]
       },
     },
   },

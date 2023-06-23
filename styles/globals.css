@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Flow+Circular&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,6 +13,7 @@
   .transition-75 {
     transition: all 0.75s;
   }
+
   .scrollNeededContainer::-webkit-scrollbar {
     width: 10px;
   }
