@@ -3,15 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db, storage } from "@/pages/firebase";
-import { AiFillHtml5 } from "react-icons/ai";
-import { DiCss3, DiSass } from "react-icons/di";
-import { BsFillBootstrapFill } from "react-icons/bs";
-import { SiJavascript, SiJquery, SiTailwindcss } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
-import { SiFirebase } from "react-icons/si";
-import { getDownloadURL, ref } from "firebase/storage";
-// import { DiCss3 } from "react-icons/di";
 
 const SkillsSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);
@@ -84,18 +75,6 @@ const SkillsSection = () => {
               </div>
             ))}
       </div> */}
-      <div className="bg-white w-[300px] h-[300px] z-10 flex flex-wrap">
-        <AiFillHtml5 size={40} />
-        <DiCss3 size={40} />
-        <SiJavascript size={40} />
-        <DiSass size={40} />
-        <BsFillBootstrapFill size={40} />
-        <SiTailwindcss size={40} />
-        <SiJquery size={40} />
-        <FaReact size={40} />
-        <SiTypescript size={40} />
-        <SiFirebase size={40} />
-      </div>
     </section>
   );
 };
