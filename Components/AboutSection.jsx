@@ -136,60 +136,6 @@ const AboutSection = () => {
                   {prag}
                 </p>
               ))}
-                            <p
-                className={`opacity-0 text-white capitalize text-justify text-[12px] md:text-[15px] lg:text-[16px] font-flowCircular md:w-[45%] w-full select-none prags min-w-[240px] md:min-w-[260px] max-w-[45%]`}
-              >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Debitis placeat animi ullam voluptate porro quidem sit dolorem
-                aspernatur quis perspiciatis laboriosam sed mollitia ea
-                dignissimos, optio deleniti? Cupiditate, laboriosam quia.
-                Placeat quasi ipsam iusto quis fuga deserunt! Adipisci esse est
-                optio a doloribus dolore voluptates nesciunt? Magnam cum,
-                repellendus ad fugiat commodi minus asperiores quis delectus
-                dolorum quibusdam reiciendis soluta. Doloribus sint ipsam alias
-                pariatur nobis ut tempora quos placeat veniam voluptate
-                recusandae suscipit maiores minus distinctio repudiandae
-                inventore itaque incidunt quod voluptatibus qui earum, omnis
-                tenetur. Id, culpa ullam. Labore totam harum alias, dolore velit
-                minus nihil odio? Sapiente cupiditate unde aut repudiandae
-                possimus, ducimus molestias reiciendis mollitia quia
-              </p>
-              <p
-                className={`opacity-0 text-white capitalize text-justify text-[12px] md:text-[15px] lg:text-[16px] font-flowCircular md:w-[45%] w-full select-none prags min-w-[240px] md:min-w-[260px] max-w-[45%]`}
-              >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Debitis placeat animi ullam voluptate porro quidem sit dolorem
-                aspernatur quis perspiciatis laboriosam sed mollitia ea
-                dignissimos, optio deleniti? Cupiditate, laboriosam quia.
-                Placeat quasi ipsam iusto quis fuga deserunt! Adipisci esse est
-                optio a doloribus dolore voluptates nesciunt? Magnam cum,
-                repellendus ad fugiat commodi minus asperiores quis delectus
-                dolorum quibusdam reiciendis soluta. Doloribus sint ipsam alias
-                pariatur nobis ut tempora quos placeat veniam voluptate
-                recusandae suscipit maiores minus distinctio repudiandae
-                inventore itaque incidunt quod voluptatibus qui earum, omnis
-                tenetur. Id, culpa ullam. Labore totam harum alias, dolore velit
-                minus nihil odio? Sapiente cupiditate unde aut repudiandae
-                possimus, ducimus molestias reiciendis mollitia quia
-              </p>
-              <p
-                className={`opacity-0 text-white capitalize text-justify text-[12px] md:text-[15px] lg:text-[16px] font-flowCircular md:w-[45%] w-full select-none prags min-w-[240px] md:min-w-[260px] max-w-[45%]`}
-              >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Debitis placeat animi ullam voluptate porro quidem sit dolorem
-                aspernatur quis perspiciatis laboriosam sed mollitia ea
-                dignissimos, optio deleniti? Cupiditate, laboriosam quia.
-                Placeat quasi ipsam iusto quis fuga deserunt! Adipisci esse est
-                optio a doloribus dolore voluptates nesciunt? Magnam cum,
-                repellendus ad fugiat commodi minus asperiores quis delectus
-                dolorum quibusdam reiciendis soluta. Doloribus sint ipsam alias
-                pariatur nobis ut tempora quos placeat veniam voluptate
-                recusandae suscipit maiores minus distinctio repudiandae
-                inventore itaque incidunt quod voluptatibus qui earum, omnis
-                tenetur. Id, culpa ullam. Labore totam harum alias, dolore velit
-                minus nihil odio? Sapiente cupiditate unde aut repudiandae
-                possimus, ducimus molestias reiciendis mollitia quia
-              </p>
             </>
           )}
         </div>
