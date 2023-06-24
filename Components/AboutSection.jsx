@@ -21,7 +21,6 @@ const AboutSection = () => {
     };
   }, []);
 
-  console.log(header)
   useEffect(() => {
     if (currentActivePage === 2) {
       let aboutPageTl = gsap.timeline();

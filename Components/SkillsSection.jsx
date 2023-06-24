@@ -2,7 +2,7 @@ import { ActiveAndChangeActive } from "@/context/context";
 import React, { useContext, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "@/pages/firebase";
+import { db, storage } from "@/pages/firebase";
 import { AiFillHtml5 } from "react-icons/ai";
 import { DiCss3, DiSass } from "react-icons/di";
 import { BsFillBootstrapFill } from "react-icons/bs";
@@ -10,6 +10,7 @@ import { SiJavascript, SiJquery, SiTailwindcss } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { SiFirebase } from "react-icons/si";
+import { getDownloadURL, ref } from "firebase/storage";
 // import { DiCss3 } from "react-icons/di";
 
 const SkillsSection = () => {
@@ -106,54 +107,49 @@ async function setDataInFire() {
     skills: [
       {
         name: "HTML",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FhtmlLogo.png?alt=media&token=66ea94ee-760e-4fc0-adfd-f44995da7050",
       },
       {
         name: "CSS",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FcssLogo.png?alt=media&token=1b97c6c9-e57f-4ee7-b771-e29c85854c2f",
       },
       {
         name: "JAVASCRIPT",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FjavascriptLogo.png?alt=media&token=2a71d693-a556-4565-b1e9-96ad836c4e56",
       },
       {
         name: "BOOTSTRAP",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FbootstrapLogo.png?alt=media&token=6d10fa54-094f-4c12-8d5a-4f6f2a300300",
       },
       {
         name: "SASS",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FsassLogo.png?alt=media&token=5d031b54-ecf2-4d02-952b-875f6010cc75",
       },
       {
         name: "TAILWIND",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FtailwindLogo.png?alt=media&token=242c2ba1-55e9-4dee-9485-54cdef17e22a",
       },
       {
         name: "JQUERY",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FjqueryLogo.png?alt=media&token=2eaf2900-96ca-45be-ac81-415c477813d4",
       },
       {
         name: "REACT",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FreactLogo.png?alt=media&token=49bcab54-3227-4a70-ab77-f6ab55a7114a",
       },
       {
         name: "TYPESCRIPT",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FtypescriptLogo.png?alt=media&token=e72c3b7d-abce-479b-851f-4b262c979b70",
       },
       {
         name: "FIREBASE",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FfirebaseLogo.png?alt=media&token=28ee344d-635b-4251-aa05-a5a03e0ad5b6",
       },
       {
         name: "GSAP",
-        techIcon: "",
+        techIcon: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/skillsLogo%2FgsapLogo.png?alt=media&token=c6570322-05b1-4298-a182-90a152c3918d",
       },
     ],
   });
 }
-
-
-// finding images
-// adding to storage
-// give the links 
-// adding to database
+setDataInFire()
