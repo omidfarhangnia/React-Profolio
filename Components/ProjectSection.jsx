@@ -1,13 +1,24 @@
 import { ActiveAndChangeActive } from "@/context/context";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { BsFan } from "react-icons/bs";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "@/pages/firebase";
 
 const ProjectSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);
+  const [projects, setProjects] = useState([]);
+  
+  useEffect(() => {
+    async function readDataForProjectPage() {
+      await getDoc(doc(db, "pageContents", "projectsPage"))
+    }
+  }, [])
 
   useEffect(() => {
     if (currentActivePage === 4) {
+      if(projects.length === 0) return; 
+
       const projectSectionTl = gsap.timeline();
       projectSectionTl
         .to(".fanContainer > span", {
@@ -38,13 +49,13 @@ const ProjectSection = () => {
           opacity: 0,
           duration: 0.5,
           ease: "power4.out",
-          delay: .3,
+          delay: 0.3,
         })
         .set(".projectBinaryCover, .projectAnimationContainer", {
-          display: "none"
-        })
+          display: "none",
+        });
     }
-  }, [currentActivePage]);
+  }, [currentActivePage, projects]);
 
   return (
     <section
@@ -158,7 +169,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -267,7 +278,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -376,7 +387,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -485,7 +496,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -594,7 +605,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -703,7 +714,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -812,7 +823,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -921,7 +932,7 @@ const ProjectSection = () => {
               </div>
               <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                 <span>
-                  <BsFan size={60} style={{fill: "#ffffff"}}/>
+                  <BsFan size={60} style={{ fill: "#ffffff" }} />
                 </span>
               </div>
             </div>
@@ -933,3 +944,49 @@ const ProjectSection = () => {
 };
 
 export default ProjectSection;
+
+// i used set data for puting data to firebase
+async function setDataInFire() {
+  await setDoc(doc(db, "pageContents", "projectsPage"), {
+    projects: [
+      {
+        name: "",
+        projectImageId: "",
+        projectUrl: ""
+      }
+    ]
+  });
+}
+
+[
+  {
+    name: "cryptobase",
+    projectImageId: "",
+    projectUrl: ""
+  },
+  {
+    name: "react online shop",
+    projectImageId: "",
+    projectUrl: ""
+  },
+  {
+    name: "netflix clone",
+    projectImageId: "",
+    projectUrl: ""
+  },
+  {
+    name: "go surf landing page",
+    projectImageId: "",
+    projectUrl: ""
+  },
+  {
+    name: "futura landing page",
+    projectImageId: "",
+    projectUrl: ""
+  },
+  {
+    name: "music player",
+    projectImageId: "",
+    projectUrl: ""
+  },
+]

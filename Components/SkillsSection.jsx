@@ -57,7 +57,7 @@ const SkillsSection = () => {
         {skills.length === 0
           ? [...Array(10)].map(() => (
               <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg font-flowCircular p-2 mx-[10px] opacity-0 skillsName">
-                <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] black"></span>
+                <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white black"></span>
                 <span className="text-[25px] md:text-[35px] mr-5">name</span>
               </div>
             ))
