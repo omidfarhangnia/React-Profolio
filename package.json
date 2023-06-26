@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^18.1.0",
     "firebase": "^9.22.2",
     "gsap": "^3.11.5",
     "next": "13.4.4",

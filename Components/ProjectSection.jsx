@@ -3,21 +3,29 @@ import React, { useContext, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { BsFan } from "react-icons/bs";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from "@/pages/firebase";
+import { db, storage } from "@/pages/firebase";
+import { getDownloadURL, ref } from "firebase/storage";
 
 const ProjectSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);
   const [projects, setProjects] = useState([]);
-  
+
   useEffect(() => {
     async function readDataForProjectPage() {
-      await getDoc(doc(db, "pageContents", "projectsPage"))
+      const response = await getDoc(doc(db, "pageContents", "projectsPage"));
+      const data = response.data();
+      console.log(data);
+      setProjects(data.projects);
     }
-  }, [])
+
+    return () => {
+      readDataForProjectPage()
+    }
+  }, []);
 
   useEffect(() => {
     if (currentActivePage === 4) {
-      if(projects.length === 0) return; 
+      if (projects.length === 0) return;
 
       const projectSectionTl = gsap.timeline();
       projectSectionTl
@@ -946,47 +954,40 @@ const ProjectSection = () => {
 export default ProjectSection;
 
 // i used set data for puting data to firebase
-async function setDataInFire() {
-  await setDoc(doc(db, "pageContents", "projectsPage"), {
-    projects: [
-      {
-        name: "",
-        projectImageId: "",
-        projectUrl: ""
-      }
-    ]
-  });
-}
-
-[
-  {
-    name: "cryptobase",
-    projectImageId: "",
-    projectUrl: ""
-  },
-  {
-    name: "react online shop",
-    projectImageId: "",
-    projectUrl: ""
-  },
-  {
-    name: "netflix clone",
-    projectImageId: "",
-    projectUrl: ""
-  },
-  {
-    name: "go surf landing page",
-    projectImageId: "",
-    projectUrl: ""
-  },
-  {
-    name: "futura landing page",
-    projectImageId: "",
-    projectUrl: ""
-  },
-  {
-    name: "music player",
-    projectImageId: "",
-    projectUrl: ""
-  },
-]
+// async function setDataInFire() {
+//   await setDoc(doc(db, "pageContents", "projectsPage"), {
+//     projects: [
+//       {
+//         name: "cryptobase",
+//         projectImageId: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/projectsPoster%2FcryptobaseProject.png?alt=media&token=f34ea697-31a5-4ecd-8a2b-d400b124eeb6",
+//       },
+//       {
+//         name: "react online shop",
+//         projectImageId: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/projectsPoster%2FreactOnlineShopProject.png?alt=media&token=12bee4dd-7ab9-4a37-a173-8efe55f42e29",
+//       },
+//       {
+//         name: "netflix clone",
+//         projectImageId: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/projectsPoster%2FnetflixCloneProject.png?alt=media&token=2abe8487-30f6-451c-b28a-a4688750d617",
+//       },
+//       {
+//         name: "go surf landing page",
+//         projectImageId: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/projectsPoster%2FgoSurfProject.png?alt=media&token=06bf3029-7e3d-4cd5-a8ee-a79ac7385f17",
+//       },
+//       {
+//         name: "futura landing page",
+//         projectImageId: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/projectsPoster%2FfuturaProject.png?alt=media&token=ca7435ce-d5f0-4e9f-a43f-dbf58708a4da",
+//       },
+//       {
+//         name: "BIOCWT online shop",
+//         projectImageId: "https://firebasestorage.googleapis.com/v0/b/react-portfolio-bb4a2.appspot.com/o/projectsPoster%2FbiocwtProject.png?alt=media&token=4447d082-4782-428a-9163-1291e38ced99",
+//       },
+//     ],
+//   })
+//   .then(() => {
+//     console.log("data uploaded")
+//   })
+//   .catch((err) => {
+//     console.log(err)
+//   })
+// }
+// setDataInFire()

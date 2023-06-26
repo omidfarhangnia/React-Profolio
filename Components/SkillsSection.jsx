@@ -55,8 +55,11 @@ const SkillsSection = () => {
       </div>
       <div className="scrollNeededContainer w-[90%] max-w-[1000px] h-[70%] mt-20 md:mt-0 overflow-y-scroll bg-customGreen3/40 z-10 flex items-center justify-around md:items-center flex-wrap p-10 text-white gap-y-5 md:gap-y-2 lg:gap-y-0">
         {skills.length === 0
-          ? [...Array(10)].map(() => (
-              <div className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg font-flowCircular p-2 mx-[10px] opacity-0 skillsName">
+          ? [...Array(10)].map((element, index) => (
+              <div
+                key={index}
+                className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg font-flowCircular p-2 mx-[10px] opacity-0 skillsName"
+              >
                 <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] bg-white black"></span>
                 <span className="text-[25px] md:text-[35px] mr-5">name</span>
               </div>
@@ -64,10 +67,7 @@ const SkillsSection = () => {
           : skills.map((member) => (
               <div className="md:w-auto flex justify-between w-full max-w-[40%] min-w-[200px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg p-2 mx-[10px] opacity-0 skillsName">
                 <span className="w-[40px] h-[40px] md:w-[50px] md:h-[50px] flex justify-center items-center">
-                  <img
-                    src={member.techIcon}
-                    className="object-contain"
-                  />
+                  <img src={member.techIcon} className="object-contain" />
                 </span>
                 <span className="text-[23px] md:text-[28px]">
                   {member.name}
