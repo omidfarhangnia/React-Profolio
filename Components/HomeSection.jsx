@@ -4,9 +4,6 @@ import { AiFillInstagram } from "react-icons/ai";
 import { BsLinkedin, BsMeta } from "react-icons/bs";
 import { gsap } from "gsap";
 import { ActiveAndChangeActive } from "@/context/context";
-// some random import
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "@/pages/firebase";
 
 const HomeSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);

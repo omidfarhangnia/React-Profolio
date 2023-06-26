@@ -5,6 +5,8 @@ import { BsFan } from "react-icons/bs";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db, storage } from "@/pages/firebase";
 import { getDownloadURL, ref } from "firebase/storage";
+import Image from "next/image";
+import binarypic from "../public/binaryNumberProjectBg.png";
 
 const ProjectSection = () => {
   const { currentActivePage } = useContext(ActiveAndChangeActive);
@@ -77,7 +79,7 @@ const ProjectSection = () => {
             ? [...Array(10)].map((element, index) => (
                 <div
                   key={index}
-                  className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] relative"
+                  className="h-[200px] w-[250px] md:w-[300px] md:h-[230px] lg:min-w-[250px] relative"
                 >
                   <div className="w-full h-full bg-gray-200 absolute top-0 left-0">
                     {/* project image */}
@@ -88,101 +90,14 @@ const ProjectSection = () => {
                     </h3>
                   </div>
                   <div className="w-full h-full absolute bg-black projectAnimationContainer">
-                    <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-black text-customGreen4/70 text-center break-words overflow-hidden absolute top-0 left-0">
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                    </div>
+                    <Image
+                      src={binarypic}
+                      className="w-full h-full absolute bg-white projectBinaryCover"
+                    />
+
                     <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                       <span>
-                        <BsFan size={60} style={{ fill: "#ffffff" }} />
+                        <BsFan size={60} style={{ fill: "#000000" }} />
                       </span>
                     </div>
                   </div>
@@ -198,7 +113,11 @@ const ProjectSection = () => {
                     <img
                       className="w-full h-[80%] bg-[#171A1E] border-none object-contain outline-none"
                       src={project.projectImageId}
-                      alt={"this is the description for my " + project.name + " project"}
+                      alt={
+                        "this is the description for my " +
+                        project.name +
+                        " project"
+                      }
                     />
                     {/* project name */}
                     <h3 className="h-[20%] text-customGreen1 text-[17px] md:text-[22px] lg:text-[27px] capitalize flex items-center justify-center font-semibold">
@@ -206,101 +125,14 @@ const ProjectSection = () => {
                     </h3>
                   </div>
                   <div className="w-full h-full absolute bg-black projectAnimationContainer">
-                    <div className="projectBinaryCover select-none w-full h-full text-[30px] bg-black text-customGreen4/70 text-center break-words overflow-hidden absolute top-0 left-0">
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                      <span>1</span>
-                      <span>0</span>
-                      <span>0</span>
-                    </div>
+                    <Image
+                      src={binarypic}
+                      className="w-full h-full absolute bg-white projectBinaryCover"
+                    />
+
                     <div className="fanContainer w-full h-full absolute top-0 left-0 flex justify-center items-center">
                       <span>
-                        <BsFan size={60} style={{ fill: "#ffffff" }} />
+                        <BsFan size={60} style={{ fill: "#000000" }} />
                       </span>
                     </div>
                   </div>
