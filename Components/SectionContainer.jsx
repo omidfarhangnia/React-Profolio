@@ -1,7 +1,6 @@
 import { ActiveAndChangeActive } from "@/context/context";
-import { env } from "@/next.config";
-import { doc } from "firebase/firestore";
 import React, { useContext, useEffect } from "react";
+import { gsap } from "gsap";
 
 const SectionContainer = ({ children }) => {
   const { currentActivePage, setCurrentActivePage } = useContext(
@@ -14,10 +13,14 @@ const SectionContainer = ({ children }) => {
 
     if (e.deltaY > 0) {
       // play animation
-      goNext(currentActivePage, setCurrentActivePage);
+      playAnimation(() => {
+        goNext(currentActivePage, setCurrentActivePage);
+      });
     } else {
       // play animation
-      goPrev(currentActivePage, setCurrentActivePage, sectionContainer);
+      playAnimation(() => {
+        goPrev(currentActivePage, setCurrentActivePage, sectionContainer);
+      });
     }
   }
 
@@ -77,6 +80,48 @@ function goPrev(currentActivePage, setCurrentActivePage) {
   } else {
     setCurrentActivePage(currentActivePage - 1);
   }
+}
+
+export function playAnimation(callback) {
+  const tl = gsap.timeline();
+  tl.set(".pageAnimeContainer", {
+    top: 0,
+  })
+    .set(".greenBarContainer > div", {
+      left: "100%",
+    })
+    .to(".leftZeroPiece, .rightZeroPiece", {
+      opacity: 1,
+      duration: 0.3,
+      ease: "linear",
+    })
+    .to(
+      ".greenBarContainer > div",
+      {
+        left: 0,
+        duration: 0.5,
+        stagger: 0.3,
+        onComplete: callback,
+      },
+      "-=.1"
+    )
+    .to(".greenBarContainer > div", {
+      left: "-100%",
+      duration: 0.5,
+      stagger: 0.3,
+    })
+    .to(
+      ".leftZeroPiece, .rightZeroPiece",
+      {
+        opacity: 0,
+        duration: 0.3,
+        ease: "linear",
+      },
+      "-=.4"
+    )
+    .set(".pageAnimeContainer", {
+      top: "200%",
+    });
 }
 
 export default SectionContainer;

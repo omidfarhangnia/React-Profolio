@@ -1,5 +1,6 @@
 import { ActiveAndChangeActive } from "@/context/context";
 import React, { useContext, useEffect } from "react";
+import { playAnimation } from "./SectionContainer";
 
 const Navbar = () => {
   const { currentActivePage, setCurrentActivePage } = useContext(
@@ -27,9 +28,11 @@ const Navbar = () => {
 
   function handleClickOpenMenu() {
     // play animation
-    const burgerMenu = document.getElementById("burgerMenuPage");
-    burgerMenu.classList.add("flex");
-    burgerMenu.classList.remove("hidden");
+    playAnimation(() => {
+      const burgerMenu = document.getElementById("burgerMenuPage");
+      burgerMenu.classList.add("flex");
+      burgerMenu.classList.remove("hidden");
+    })
   }
 
 

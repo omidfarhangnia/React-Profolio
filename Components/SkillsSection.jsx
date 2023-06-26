@@ -55,7 +55,7 @@ const SkillsSection = () => {
       </div>
       <div className="scrollNeededContainer w-[90%] max-w-[1000px] h-[70%] mt-20 md:mt-0 overflow-y-scroll bg-customGreen3/40 z-10 flex items-center justify-around md:items-center flex-wrap p-10 text-white gap-y-5 md:gap-y-2">
         {skills.length === 0
-          ? [...Array(10)].map((element, index) => (
+          ? [...Array(9)].map((element, index) => (
               <div
                 key={index}
                 className="md:w-auto flex justify-between w-full max-w-[250px] md:min-w-[250px] items-center gap-3 border-2 border-solid border-white/30 rounded-lg font-flowCircular p-2 mx-[10px] opacity-0 skillsName"

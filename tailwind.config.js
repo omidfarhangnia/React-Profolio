@@ -22,7 +22,8 @@ module.exports = {
         lobster: ["Lobster", "cursive"],
         comfortaa: ["Comfortaa", "cursive"],
         roboto: ["Roboto", "sans-serif"],
-        flowCircular: ['Flow Circular', "cursive"]
+        flowCircular: ['Flow Circular', "cursive"],
+        frankRuhlLibre: ['Frank Ruhl Libre', "serif"]
       },
     },
   },

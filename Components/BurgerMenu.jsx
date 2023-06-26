@@ -1,6 +1,7 @@
 import { ActiveAndChangeActive } from "@/context/context";
 import React, { useContext, useEffect } from "react";
 import { ImCross } from "react-icons/im";
+import { playAnimation } from "./SectionContainer";
 
 export default function BurgerMenu() {
   const { currentActivePage, setCurrentActivePage } = useContext(
@@ -25,12 +26,14 @@ export default function BurgerMenu() {
       setCurrentActivePage(Number(selectedNumber));
     }, 500);
   }
-  
+
   function handleClickCloseMenu() {
     // play animation
-    const burgerMenu = document.getElementById("burgerMenuPage");
-    burgerMenu.classList.add("hidden");
-    burgerMenu.classList.remove("flex");
+    playAnimation(() => {
+      const burgerMenu = document.getElementById("burgerMenuPage");
+      burgerMenu.classList.add("hidden");
+      burgerMenu.classList.remove("flex");
+    });
   }
 
   return (

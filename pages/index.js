@@ -1,4 +1,5 @@
 import AboutSection from "@/Components/AboutSection";
+import AnimeContainer from "@/Components/AnimeContainer";
 import BurgerMenu from "@/Components/BurgerMenu";
 import HomeSection from "@/Components/HomeSection";
 import Navbar from "@/Components/Navbar";
@@ -13,6 +14,7 @@ export default function Home() {
       <div className="relative">
         <Navbar />
         <BurgerMenu />
+        <AnimeContainer />
         <main
           className="relative w-full h-[100vh] overflow-hidden"
           id="sectionContainer"
