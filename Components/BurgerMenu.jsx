@@ -21,7 +21,8 @@ export default function BurgerMenu() {
       e.removeEventListener("click", handleClick);
     });
     const selectedNumber = e.target.getAttribute("linkid");
-    // everything is ok
+
+onClick={handleClickCloseMenu}    // everything is ok
     setTimeout(() => {
       setCurrentActivePage(Number(selectedNumber));
     }, 500);
@@ -52,6 +53,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkid={1}
+              onClick={handleClickCloseMenu}
               className={`${currentActivePage === 1 && "underline"} navLinks`}
             >
               Home
@@ -60,6 +62,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkid={2}
+              onClick={handleClickCloseMenu}
               className={`${currentActivePage === 2 && "underline"} navLinks`}
             >
               About
@@ -68,6 +71,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkid={3}
+              onClick={handleClickCloseMenu}
               className={`${currentActivePage === 3 && "underline"} navLinks`}
             >
               Skills
@@ -76,6 +80,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkid={4}
+              onClick={handleClickCloseMenu}
               className={`${currentActivePage === 4 && "underline"} navLinks`}
             >
               Project
@@ -84,6 +89,7 @@ export default function BurgerMenu() {
           <li className="relative overflow-hidde capitalize text-[30px] text-customGreen1 cursor-pointer">
             <span
               linkid={5}
+              onClick={handleClickCloseMenu}
               className={`${currentActivePage === 5 && "underline"} navLinks`}
             >
               Say hello

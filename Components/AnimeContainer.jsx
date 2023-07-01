@@ -3,7 +3,7 @@ import React from "react";
 
 function AnimeContainer() {
     return (
-        <div className="pageAnimeContainer w-[100vw] h-[100vh] fixed top-[200%] left-0 z-10 flex justify-center items-center select-none">
+        <div className="hidden lg:flex pageAnimeContainer w-[100vw] h-[100vh] fixed top-[200%] left-0 z-10 justify-center items-center select-none">
             <span className="leftZeroPiece text-[180vh] font-frankRuhlLibre w-[21%] overflow-hidden relative opacity-0 text-white">
                 <span className="absolute left-0">0</span>
                 <span className="invisible">0</span>

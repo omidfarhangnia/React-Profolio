@@ -20,10 +20,10 @@ const Navbar = () => {
       e.removeEventListener("click", handleClick);
     });
     const selectedNumber = e.target.getAttribute("linkid");
-    // everything is ok
-    setTimeout(() => {
+    // play animation
+    playAnimation(() => {
       setCurrentActivePage(Number(selectedNumber));
-    }, 500);
+    });
   }
 
   function handleClickOpenMenu() {
@@ -32,9 +32,8 @@ const Navbar = () => {
       const burgerMenu = document.getElementById("burgerMenuPage");
       burgerMenu.classList.add("flex");
       burgerMenu.classList.remove("hidden");
-    })
+    });
   }
-
 
   return (
     <header className="fixed top-0 left-0 w-full z-10">
